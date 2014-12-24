@@ -2,7 +2,7 @@
 
 var https = require('https')
   , intersections = require('lodash-node/modern/arrays/intersection')
-  , resultUrl = 'https://www.norsk-tipping.no/api-lotto/getResultInfo.json?gameID=1&winnerDetails=true'
+  , ntr = require('norsk-tipping-results')
   , myRows = [
       [2, 11, 24, 26, 27, 29, 30],
       [3, 4, 6, 16, 24, 27, 29],
@@ -25,23 +25,13 @@ function fixDate(date){
   return newDate;
 }
 
-function handleData(inp){
-  var data = inp.toString()
-    , json
-    ;
-  data = data.replace('while(true);/* 0;', '');
-  data = data.replace('/* */', '');
-  json = JSON.parse(data);
-  console.log('Trekning ' + fixDate(json.drawDate));
-  myRows.forEach(function(row){
-    console.log(intersections(json.mainTable, row).length + ' rette og ' + intersections(json.addTable, row).length + ' tilleggstall');
-  })
-}
-
-https.get(resultUrl, function(res){
-
-  res.on('data', handleData);
-
-}).on('error', function(e) {
-  console.error(e);
+ntr('lotto', function (err, json) {
+  if(err){
+    console.error(err);
+  } else {
+    console.log('Trekning ' + fixDate(json.drawDate));
+    myRows.forEach(function(row){
+      console.log(intersections(json.mainTable, row).length + ' rette og ' + intersections(json.addTable, row).length + ' tilleggstall');
+    })
+  }
 });
