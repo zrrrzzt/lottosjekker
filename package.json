@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "lodash-node": "^2.4.1",
-    "norsk-tipping-results": "git+https://github.com/zrrrzzt/norsk-tipping-results.git"
+    "norsk-tipping-results": "^1.0.1"
   }
 }

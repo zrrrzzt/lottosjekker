@@ -22,8 +22,9 @@ var https = require('https')
 
 function fixDate(date){
   var dateArr = date.split(',')
-    , newDate = ''
+    , newDate
     ;
+
   newDate = dateArr[2] + '.' + dateArr[1] + '.' + dateArr[0];
   return newDate;
 }
