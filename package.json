@@ -15,6 +15,7 @@
     "url": "http://github.com/zrrrzzt/lottosjekker/issues"
   },
   "dependencies": {
-    "lodash-node": "^2.4.1"
+    "lodash-node": "^2.4.1",
+    "norsk-tipping-results": "git+https://github.com/zrrrzzt/norsk-tipping-results.git"
   }
 }

@@ -3,6 +3,9 @@
 var https = require('https')
   , intersections = require('lodash-node/modern/arrays/intersection')
   , ntr = require('norsk-tipping-results')
+  , opts = {
+      type : 'lotto'
+    }
   , myRows = [
       [2, 11, 24, 26, 27, 29, 30],
       [3, 4, 6, 16, 24, 27, 29],
@@ -25,7 +28,7 @@ function fixDate(date){
   return newDate;
 }
 
-ntr('lotto', function (err, json) {
+ntr(opts, function (err, json) {
   if(err){
     console.error(err);
   } else {
