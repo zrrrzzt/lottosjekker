@@ -1,10 +1,8 @@
 'use strict';
 
-var https = require('https')
-  , intersections = require('lodash-node/modern/arrays/intersection')
-  , ntr = require('norsk-tipping-results')
+var ntr = require('norsk-tipping-results')
+  , cr = require('./lib/checkResults')
   , myRows = require('./myrows')
-  , fixDate = require('./fixdate')
   , opts = {
       type : 'lotto'
     }
@@ -14,9 +12,12 @@ ntr(opts, function (err, json) {
   if(err){
     console.error(err);
   } else {
-    console.log('Trekning ' + fixDate(json.drawDate));
-    myRows.forEach(function(row){
-      console.log(intersections(json.mainTable, row).length + ' rette og ' + intersections(json.addTable, row).length + ' tilleggstall');
-    })
+    cr({result:json, rows:myRows}, function(error, data){
+      if(error){
+        console.log(error);
+      } else {
+        console.log(data);
+      }
+    });
   }
 });
