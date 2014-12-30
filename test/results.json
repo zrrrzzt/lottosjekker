@@ -1,0 +1,15 @@
+{
+  "drawID":973,
+  "drawDate":"2014,12,27,18,00,00",
+  "mainTable":[1,12,16,20,24,26,33],
+  "addTable":[9,15,18],
+  "prizeTable":["2886210","76170","6880","215","45"],
+  "prizeCaptionTable":["7 rette","6 + 1 rette","6 rette","5 rette","4 + 1 rette"],
+  "winnerCountTable":[4,76,464,21064,96181],
+  "turnover":66540932,
+  "totalNumberOfWinners":117789,
+  "superlottoNextDraw":{
+    "numberOfDrawsUntil":14,
+    "prizePool":8406523,
+    "drawDate":"2015,04,04,20,00,00"}
+}
