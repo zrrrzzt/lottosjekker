@@ -18,8 +18,7 @@
     "test": "mocha --reporter spec test/*.js"
   },
   "dependencies": {
-    "lodash-node": "^2.4.1",
-    "norsk-tipping-results": "^1.0.1"
+    "lodash-node": "^2.4.1"
   },
   "devDependencies": {
     "mocha": "^2.1.0"

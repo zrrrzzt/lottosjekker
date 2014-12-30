@@ -1,6 +1,6 @@
 'use strict';
 
-var myRows = [
+var rows = [
       [2, 11, 24, 26, 27, 29, 30],
       [3, 4, 6, 16, 24, 27, 29],
       [6, 7, 11, 13, 16, 17, 27],
@@ -14,4 +14,4 @@ var myRows = [
     ]
   ;
 
-module.exports = myRows;
+module.exports = rows;

@@ -2,9 +2,9 @@
 
 var fs = require('fs')
   , assert = require('assert')
-  , chkr = require('../lib/checkResults')
+  , chkr = require('../index')
   , results = JSON.parse(fs.readFileSync('test/results.json').toString())
-  , myrows = require('../myrows')
+  , myrows = require('./rows')
   , output = fs.readFileSync('test/output.txt').toString()
   ;
 

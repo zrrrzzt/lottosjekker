@@ -1,7 +1,7 @@
 'use strict';
 
 var assert = require('assert')
-  , chkr = require('../lib/checkResults')
+  , chkr = require('../index')
   ;
 
 describe('lottosjekker - inputs', function(){

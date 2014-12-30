@@ -1,23 +1,26 @@
 'use strict';
 
-var ntr = require('norsk-tipping-results')
-  , cr = require('./lib/checkResults')
-  , myRows = require('./myrows')
-  , opts = {
-      type : 'lotto'
-    }
+var intersections = require('lodash-node/modern/arrays/intersection')
+  , fixDate = require('./lib/fixdate')
+  , output = []
   ;
 
-ntr(opts, function (err, json) {
-  if(err){
-    console.error(err);
-  } else {
-    cr({result:json, rows:myRows}, function(error, data){
-      if(error){
-        console.log(error);
-      } else {
-        console.log(data);
-      }
-    });
+function checkResults(opts, callback){
+
+  if(!opts.result){
+    return callback(new Error('Missing required param: opts.result'), null);
   }
-});
+
+  if(!opts.rows){
+    return callback(new Error('Missing required param: opts.rows'), null);
+  }
+
+  output.push('Trekning ' + fixDate(opts.result.drawDate));
+  opts.rows.forEach(function(row){
+    output.push(intersections(opts.result.mainTable, row).length + ' rette og ' + intersections(opts.result.addTable, row).length + ' tilleggstall');
+  });
+
+  return callback(null, output.join('\n'));
+}
+
+module.exports = checkResults;
