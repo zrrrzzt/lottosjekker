@@ -1,6 +1,8 @@
-#lottosjekker
+#lottosjekker [![Build Status](https://travis-ci.org/zrrrzzt/lottosjekker.svg?branch=master)](https://travis-ci.org/zrrrzzt/lottosjekker)
 
-Node modul for å se hvor mange rette man har i lotto
+Node module for checking your results in the norwegian lottery (Lotto).
+
+##Usage
 
 ```
 'use strict';
