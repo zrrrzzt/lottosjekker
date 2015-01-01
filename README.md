@@ -1,8 +1,14 @@
 #lottosjekker [![Build Status](https://travis-ci.org/zrrrzzt/lottosjekker.svg?branch=master)](https://travis-ci.org/zrrrzzt/lottosjekker)
 
-Node module for checking your results in the norwegian lottery (Lotto).
+Node module for checking your results in the norwegian lottery (Lotto) from Norsk tipping.
 
 ##Usage
+
+Pass in an options object.
+
+**result** Result from a given draw.
+
+**rows** An array of arrays with the number you will check.
 
 ```
 'use strict';
@@ -32,7 +38,7 @@ function checkResults(err, result){
   } else {
     chkr({result:result, rows:rows}, function(error, data){
       if(error){
-        console.log(error);
+        console.error(error);
       } else {
         console.log(data);
       }

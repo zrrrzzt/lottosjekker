@@ -6,7 +6,7 @@ var assert = require('assert')
 
 describe('lottosjekker - inputs', function(){
 
-  it('requires opts to exist', function(done){
+  it('requires opts and callback to be supplied', function(done){
 
     var opts = false;
 
@@ -14,7 +14,7 @@ describe('lottosjekker - inputs', function(){
       assert.throws(function(){
           if(err) throw err;
         }, function(err){
-          if((err instanceof Error) && /Missing required object: opts/.test(err)){
+          if((err instanceof Error) && /Missing required input. Both opts and callback is required./.test(err)){
             return true
           }
         },

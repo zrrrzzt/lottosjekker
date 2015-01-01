@@ -7,8 +7,8 @@ var intersections = require('lodash-node/modern/arrays/intersection')
 
 function checkResults(opts, callback){
 
-  if(!opts){
-    return callback(new Error('Missing required object: opts'), null);
+  if(!opts || !callback){
+    return callback(new Error('Missing required input. Both opts and callback is required.'), null);
   }
 
   if(!opts.result){
