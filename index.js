@@ -7,6 +7,10 @@ var intersections = require('lodash-node/modern/arrays/intersection')
 
 function checkResults(opts, callback){
 
+  if(!opts){
+    return callback(new Error('Missing required object: opts'), null);
+  }
+
   if(!opts.result){
     return callback(new Error('Missing required param: opts.result'), null);
   }

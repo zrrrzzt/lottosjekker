@@ -6,6 +6,26 @@ var assert = require('assert')
 
 describe('lottosjekker - inputs', function(){
 
+  it('requires opts to exist', function(done){
+
+    var opts = false;
+
+    chkr(opts, function(err, data){
+      assert.throws(function(){
+          if(err) throw err;
+        }, function(err){
+          if((err instanceof Error) && /Missing required object: opts/.test(err)){
+            return true
+          }
+        },
+        "Unexpected error"
+      );
+      done();
+    });
+
+  });
+
+
   it('requires opts.result to exist', function(done){
 
     var opts = {
