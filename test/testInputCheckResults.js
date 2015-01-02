@@ -70,4 +70,26 @@ describe('lottosjekker - inputs', function(){
 
   });
 
+  it('requires opts.rows to be an array', function(done){
+
+    var opts = {
+      result:true,
+      rows:true
+    };
+
+    chkr(opts, function(err, data){
+      assert.throws(function(){
+          if(err) throw err;
+        }, function(err){
+          if((err instanceof Error) && /Wrong input. opts.rows must be an array/.test(err)){
+            return true
+          }
+        },
+        "Unexpected error"
+      );
+      done();
+    });
+
+  });
+
 });
