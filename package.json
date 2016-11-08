@@ -18,9 +18,9 @@
     "test": "mocha --reporter spec test/*.js"
   },
   "dependencies": {
-    "lodash-node": "^2.4.1"
+    "lodash-node": "^3.10.2"
   },
   "devDependencies": {
-    "mocha": "^2.1.0"
+    "mocha": "^3.1.2"
   }
 }
