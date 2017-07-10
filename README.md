@@ -1,8 +1,11 @@
-#lottosjekker [![Build Status](https://travis-ci.org/zrrrzzt/lottosjekker.svg?branch=master)](https://travis-ci.org/zrrrzzt/lottosjekker)
+[![Build Status](https://travis-ci.org/zrrrzzt/lottosjekker.svg?branch=master)](https://travis-ci.org/zrrrzzt/lottosjekker)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+
+# lottosjekker
 
 Node module for checking your results in the norwegian lottery (Lotto) from Norsk tipping.
 
-##Usage
+## Usage
 
 Pass in an options object.
 
@@ -11,11 +14,11 @@ Pass in an options object.
 **rows** An array of arrays with the number you will check.
 
 ```
-'use strict';
+'use strict'
 
-var ntr = require('norsk-tipping-results')
-  , chkr = require('lottosjekker')
-  , rows = [
+const ntr = require('norsk-tipping-results')
+const chkr = require('lottosjekker')
+const rows = [
                 [2, 11, 24, 26, 27, 29, 30],
                 [3, 4, 6, 16, 24, 27, 29],
                 [6, 7, 11, 13, 16, 17, 27],
@@ -30,21 +33,26 @@ var ntr = require('norsk-tipping-results')
   , ntrOpts = {
     type : 'lotto'
   }
-  ;
 
-function checkResults(err, result){
-  if(err){
-    console.error(err);
+function checkResults (err, result) {
+  if (err) {
+    console.error(err)
   } else {
-    chkr({result:result, rows:rows}, function(error, data){
-      if(error){
-        console.error(error);
+    chkr({result:result, rows:rows}, (error, data) => {
+      if (error) {
+        console.error(error)
       } else {
-        console.log(data);
+        console.log(data)
       }
-    });
+    })
   }
 }
 
-ntr(ntrOpts, checkResults);
+ntr(ntrOpts, checkResults)
 ```
+
+## License
+
+[MIT](LICENSE)
+
+![Robohash image of lottosjekker](https://robots.kebabstudios.party/lottosjekker.png "Robohash image of lottosjekker")
