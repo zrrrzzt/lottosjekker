@@ -28,6 +28,6 @@
   },
   "devDependencies": {
     "mocha": "6.2.0",
-    "standard": "14.2.0"
+    "standard": "14.3.1"
   }
 }
