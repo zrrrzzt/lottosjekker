@@ -27,7 +27,7 @@
     "lodash.intersection": "4.4.0"
   },
   "devDependencies": {
-    "mocha": "9.2.1",
+    "mocha": "10.4.0",
     "standard": "16.0.4"
   }
 }
